@@ -1,35 +1,106 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dogownership in Vienna</title>
 
+    <link rel="stylesheet" href="style.css">
+
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="hard-facts.js"></script>
 </head>
+
 <body>
 
-    <h1>Urban living conditions shape dog ownership patterns</h1>
+    <h1>Urban living conditions shape dog ownership patterns in Vienna</h1>
 
-    <h2>HARD FACTS</h2>
+    <p>How do dog ownership and breed distributions vary across Vienna's districts?
+        Using official data from the City of Vienna and breed information from Kaggle,
+        this project explores how dog populations are reflected in urban structures, neighborhood
+        characteristics, and living conditions across the city. The goal? Identifying wether dog-related
+        data can support future urban planning decisions.</p>
 
-    <H2>DOGS ACROSS VIENNA</H2>
+    <h2>Hard Facts</h2>
 
-    <H2>HOUSING SHAPES DOG OWNERSHIP</H2>
+    <div class="facts">
+        <div>
+            <h3>
+                <span id="dogs-count">...</span>
+                <span>dogs</span>
+            </h3>
+            <p>in Vienna</p>
+        </div>
+        <div>
+            <h3>
+                <span id="breed-ratio">...</span>
+                <span>%</span>
+            </h3>
+            <p>mixed-breeds</p>
+        </div>
+        <div>
+            <h3>
+                <span id="dog-space-count">...</span>
+                <span>m²</span>
+            </h3>
+            <p>dog space in public space</p>
+        </div>
+        <div>
+            <h3>
+                <span id="living-space-count">...</span>
+                <span>m²</span>
+            </h3>
+            <p>average apartment space</p>
+        </div>
+    </div>
 
-    <H2>PUBLIC SPACE FOR ACTIVE DOGS</H2>
+    <H2>Dogs Across Vienna</H2>
+    <p>This section discovers the Top 10 Dog Breeds in each district of Vienna.
+        The view can be adjusted to display either all registered dogs or only purebred dogs.
+    </p>
+    <p id="hint">Select a district to explore!</p>
 
-    <H2>DOGS PER CAPITA</H2>
+    <div class="filter-controls">
+        <label>
+            <input type="radio" name="breed-filter" value="all" checked> All breeds
+        </label>
+        <label>
+            <input type="radio" name="breed-filter" value="pure"> Pure breeds only
+        </label>
+    </div>
 
-    <H2>SOCIOECONOMIC DIFFERENCES IN BREED PREFERENCES</H2>
+    <div class="map">
+        <svg id="vienna-map" width="800" height="600"></svg>
 
-    <script>
-        console.log("D3 Version:", d3.version);
+        <div id="breed-chart" style="display:none">
+            <h3 id="breed-chart-title"></h3>
+            <svg id="breed-chart-svg"></svg>
+        </div>
+    </div>
 
-        d3.select("body")
-          .append("p")
-          .text("D3 works!");
-    </script>
+    <script src="MapDogsPerDistrict.js"></script>
+
+    <H2>Housing Shapes Dog Ownership</H2>
+    <p>This chart explores how living space relates to dog ownership.
+        Each bubble shows a district's average apartment space and the top 5 (pure breed) size and activity levels. 
+        The bubble size represents the overall number of dogs within the district.</p>
+    <p id="hint">Hover over a bubble to examine!</p>
+
+    <div class="apartments">
+        <div id="apartment-chart">
+            <svg id="apartment-chart-svg"></svg>
+        </div>
+    </div>
+
+    <script src="DogsPerApartmentSpace.js"></script>
+
+    <H2>Public Space For Active Dogs</H2>
+
+    <H2>Dogs Per Capita</H2>
+
+    <H2>Socioeconomic Differences In Breed Preferences</H2>
 
 </body>
+
 </html>

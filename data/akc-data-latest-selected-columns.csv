@@ -31,7 +31,7 @@ Beauceron;Beauceron;Gentle, Faithful, Obedient;60.96;69.85;31.751465900000003;49
 Bedlington Terrier;Bedlington Terrier;Loyal, Charming, Frollicking;38.1;44.45;7.71107029;10.43262451;0.8;Energetic
 Laekenois;Belgian Laekenois;Affectionate, Alert, Intelligent;55.88;66.04;24.947580350000003;29.48350405;0.8;Energetic
 Malinois;Belgian Malinois;Confident, Smart, Hardworking;55.88;66.04;18.143694800000002;36.287389600000004;0.8;Energetic
-Belgischer Sch‰ferhund;Belgian Sheepdog;Bright, Watchful, Serious-Minded;55.88;66.04;20.41165665;34.01942775;0.8;Energetic
+Belgischer Sch√§ferhund;Belgian Sheepdog;Bright, Watchful, Serious-Minded;55.88;66.04;20.41165665;34.01942775;0.8;Energetic
 Tervueren;Belgian Tervuren;Courageous, Alert, Intelligent;55.88;66.04;20.41165665;34.01942775;0.8;Energetic
 Cane da Pastore Bergamasco;Bergamasco Sheepdog;Independent, Sociable, Intelligent;55.88;59.69;25.85476509;38.10175908;0.4;Calm
 Berger Picard;Berger Picard;Loyal, Good-Natured, Observant;54.61;64.77;22.6796185;31.751465900000003;1.0;Needs Lots of Activity
@@ -73,7 +73,7 @@ Cavalier King Charles Spaniel;Cavalier King Charles Spaniel;Affectionate, Gentle
 Zentralasiatischer Ovtcharka;Central Asian Shepherd Dog;Independent, Courageous, Self-Confident;64.77;69.85;39.916128560000004;49.895160700000005;0.4;Calm
 Cesky Terrier;Cesky Terrier;Clever, Adventurous, Family-Oriented;25.40;33.02;6.35029318;10.886216880000001;0.6;Regular Exercise
 Chesapeake Bay Retriever;Chesapeake Bay Retriever;Affectionate, Bright, Sensitive;53.34;66.04;24.947580350000003;36.287389600000004;0.8;Energetic
-Chihuahua;Chihuahua;Charming, Graceful, Sassy;12.600;20.32;2.7215542200000002;2.7215542200000002;0.6;Regular Exercise
+Chihuahua Kurzhaar / Chihuahua Langhaar;Chihuahua;Charming, Graceful, Sassy;12.600;20.32;2.7215542200000002;2.7215542200000002;0.6;Regular Exercise
 Chinese Crested Dog;Chinese Crested;Affectionate, Alert, Lively;27.94;33.02;3.62873896;5.4431084400000005;0.6;Regular Exercise
 Shar-Pei;Chinese Shar-Pei;Loyal, Independent, Calm;45.72;50.8;20.41165665;27.2155422;0.6;Regular Exercise
 ;Chinook;Smart, Patient, Devoted;55.88;66.04;22.6796185;40.8233133;0.8;Energetic
@@ -96,7 +96,7 @@ Dogo Argentino;Dogo Argentino;Friendly, Cheerful, Humble;60.96;67.31;39.91612856
 Bordeauxdogge;Dogue de Bordeaux;Affectionate, Loyal, Courageous;58.42;66.04;44.905644630000005;49.895160700000005;0.6;Regular Exercise
 Drentsche Patrijshond;Drentsche Patrijshond;Loyal, Intelligent, Sensitive;53.34;63.5;21.772433760000002;33.11224301;0.8;Energetic
 ;Drever;Loyal, Even-Tempered, Determined;30.48;38.1;15.875732950000002;18.143694800000002;0.6;Regular Exercise
-Holl‰ndischer Sch‰ferhund;Dutch Shepherd;Intelligent, Lively, Athletic;54.61;62.230000000000004;19.05087954;34.01942775;1.0;Needs Lots of Activity
+Holl√§ndischer Sch√§ferhund;Dutch Shepherd;Intelligent, Lively, Athletic;54.61;62.230000000000004;19.05087954;34.01942775;1.0;Needs Lots of Activity
 English Cocker Spaniel;English Cocker Spaniel;Energetic, Merry, Responsive;38.1;43.18;11.793401620000001;15.42214058;0.6;Regular Exercise
 English Foxhound;English Foxhound;Affectionate, Gentle, Sociable;60.96;60.96;27.2155422;34.01942775;0.8;Energetic
 English Setter;English Setter;Friendly, Mellow, Merry;58.42;68.58;20.41165665;36.287389600000004;0.8;Energetic
@@ -109,11 +109,11 @@ Field Spaniel;Field Spaniel;Sweet, Fun-Loving, Sensitive;43.18;45.72;15.87573295
 Finnischer Lapphund;Finnish Lapphund;Friendly, Alert, Agile;40.64;53.34;14.968548210000002;24.04039561;0.6;Regular Exercise
 Finnen-Spitz;Finnish Spitz;Friendly, Good-Natured, Lively;39.37;50.8;9.071847400000001;14.968548210000002;1.0;Needs Lots of Activity
 Flat-Coated Retriever;Flat-Coated Retriever;Cheerful, Optimistic, Good-Humored;55.88;62.230000000000004;27.2155422;31.751465900000003;1.0;Needs Lots of Activity
-Franzˆsische Bulldogge;French Bulldog;Adaptable, Playful, Smart;27.94;33.02;12.70058636;12.70058636;0.4;Calm
-Franzˆsischer Spaniel;French Spaniel;Gentle, Sociable, Intelligent;54.61;60.96;22.6796185;27.2155422;;
+Franz√∂sische Bulldogge;French Bulldog;Adaptable, Playful, Smart;27.94;33.02;12.70058636;12.70058636;0.4;Calm
+Franz√∂sischer Spaniel;French Spaniel;Gentle, Sociable, Intelligent;54.61;60.96;22.6796185;27.2155422;;
 Deutsch Langhaar;German Longhaired Pointer;Versatile, Calm, Family-Oriented;55.88;71.12;24.947580350000003;36.287389600000004;0.8;Energetic
 Deutscher Pinscher;German Pinscher;Courageous, Intelligent, Vivacious;43.18;50.8;11.33980925;20.41165665;1.0;Needs Lots of Activity
-Deutscher Sch‰ferhund;German Shepherd Dog;Confident, Courageous, Smart;55.88;66.04;22.6796185;40.8233133;0.6;Regular Exercise
+Deutscher Sch√§ferhund;German Shepherd Dog;Confident, Courageous, Smart;55.88;66.04;22.6796185;40.8233133;0.6;Regular Exercise
 Deutsch Kurzhaar;German Shorthaired Pointer;Friendly, Smart, Willing to Please;53.34;63.5;20.41165665;31.751465900000003;1.0;Needs Lots of Activity
 Deutscher Spitz;German Spitz;Devoted, Lively, Attentive;30.48;38.1;10.886216880000001;11.793401620000001;0.6;Regular Exercise
 Deutsch Drahthaar;German Wirehaired Pointer;Affectionate, Eager, Enthusiastic;55.88;66.04;22.6796185;31.751465900000003;1.0;Needs Lots of Activity
@@ -121,10 +121,10 @@ Riesenschnauzer;Giant Schnauzer;Loyal, Alert, Trainable;59.69;69.85;24.947580350
 Glen of Imaal Terrier;Glen of Imaal Terrier;Gentle, Spirited, Bold;31.75;35.56;14.51495584;18.143694800000002;0.6;Regular Exercise
 Golden Retriever;Golden Retriever;Friendly, Intelligent, Devoted;54.61;60.96;24.947580350000003;34.01942775;1.0;Needs Lots of Activity
 Gordon Setter;Gordon Setter;Affectionate, Confident, Bold;58.42;68.58;20.41165665;36.287389600000004;1.0;Needs Lots of Activity
-Grand Basset griffon vendeen;Grand Basset Griffon Vend√©en;Independent, Happy, Outgoing;39.37;45.72;18.143694800000002;20.41165665;1.0;Needs Lots of Activity
+Grand Basset griffon vendeen;Grand Basset Griffon Vend√É¬©en;Independent, Happy, Outgoing;39.37;45.72;18.143694800000002;20.41165665;1.0;Needs Lots of Activity
 Deutsche Dogge;Great Dane;Friendly, Patient, Dependable;71.12;81.28;49.895160700000005;79.37866475;0.8;Energetic
-Pyren‰enberghund;Great Pyrenees;Smart, Patient, Calm;63.5;81.28;38.55535145;45.359237;1.0;Needs Lots of Activity
-Groﬂer Schweizer Sennenhund;Greater Swiss Mountain Dog;Faithful, Family-Oriented, Dependable;59.69;72.39;38.55535145;63.502931800000006;0.8;Energetic
+Pyren√§enberghund;Great Pyrenees;Smart, Patient, Calm;63.5;81.28;38.55535145;45.359237;1.0;Needs Lots of Activity
+Gro√üer Schweizer Sennenhund;Greater Swiss Mountain Dog;Faithful, Family-Oriented, Dependable;59.69;72.39;38.55535145;63.502931800000006;0.8;Energetic
 Greyhound;Greyhound;Gentle, Independent, Noble;68.58;76.2;27.2155422;31.751465900000003;0.8;Energetic
 ;Hamiltonstovare;Agile, Versatile, Regal;48.26;60.96;18.143694800000002;34.01942775;0.8;Energetic
 Hannoverscher Schweisshund;Hanoverian Scenthound;Loyal, Independent, Calm;48.26;53.34;35.83379723;44.905644630000005;0.6;Regular Exercise
@@ -150,7 +150,7 @@ Wolfspitz;Keeshond;Friendly, Lively, Outgoing;43.18;45.72;15.875732950000002;20.
 Kerry Blue Terrier;Kerry Blue Terrier;Smart, Alert, People-Oriented;44.45;49.53;14.968548210000002;18.143694800000002;0.6;Regular Exercise
 ;Kishu Ken;Faithful, Noble, Docile;43.18;55.88;13.6077711;27.2155422;0.8;Energetic
 Komondor;Komondor;Loyal, Dignified, Brave;64.77;69.85;36.287389600000004;45.359237;0.6;Regular Exercise
-Kromfohrl‰nder;Kromfohrlander;Intelligent, Active, Sensitive;38.1;45.72;9.071847400000001;15.875732950000002;0.6;Regular Exercise
+Kromfohrl√§nder;Kromfohrlander;Intelligent, Active, Sensitive;38.1;45.72;9.071847400000001;15.875732950000002;0.6;Regular Exercise
 Kuvasz;Kuvasz;Loyal, Fearless, Sweet;66.04;76.2;31.751465900000003;52.163122550000004;0.6;Regular Exercise
 Labrador Retriever;Labrador Retriever;Friendly, Active, Outgoing;54.61;62.230000000000004;24.947580350000003;36.287389600000004;1.0;Needs Lots of Activity
 ;Lagotto Romagnolo;Affectionate, Keen, Undemanding;40.64;48.26;10.886216880000001;15.875732950000002;0.6;Regular Exercise
@@ -159,7 +159,7 @@ Lancashire Heeler;Lancashire Heeler;Affectionate, Versatile, Intelligent;25.40;3
 ;Lapponian Herder;Friendly, Energetic, Intelligent;45.72;50.8;31.751465900000003;31.751465900000003;0.6;Regular Exercise
 Leonberger;Leonberger;Friendly, Gentle, Playful;64.77;80.01;40.8233133;77.1107029;0.6;Regular Exercise
 Lhasa Apso;Lhasa Apso;Confident, Smart, Comical;25.40;27.94;5.4431084400000005;8.164662660000001;0.6;Regular Exercise
-Lˆwchen;Lˆwchen;Affectionate, Outgoing, Positive;27.94;33.02;4.535923700000001;6.80388555;0.6;Regular Exercise
+L√∂wchen;L√∂wchen;Affectionate, Outgoing, Positive;27.94;33.02;4.535923700000001;6.80388555;0.6;Regular Exercise
 Malteser;Maltese;Gentle, Playful, Charming;17.78;22.86;3.17514659;3.17514659;0.6;Regular Exercise
 Manchester Terrier;Manchester Terrier (Standard);Spirited, Bright, Keenly Observant;38.1;40.64;5.4431084400000005;9.979032140000001;0.6;Regular Exercise
 ;Manchester Terrier (Toy);Agile, Spirited, Intelligent;25.40;30.48;5.4431084400000005;5.4431084400000005;0.6;Regular Exercise
@@ -172,11 +172,11 @@ Zwergschnauzer;Miniature Schnauzer;Friendly, Smart, Obedient;30.48;35.56;4.98951
 Mudi;Mudi;Loyal, Intelligent, Active;38.1;46.99;8.164662660000001;13.15417873;1.0;Needs Lots of Activity
 ;Neapolitan Mastiff;Loyal, Dignified, Watchful;60.96;78.74;49.895160700000005;68.0388555;0.6;Regular Exercise
 Kooikerhondje;Nederlandse Kooikerhondje;Friendly, Alert, Quick;35.56;43.18;9.071847400000001;13.6077711;0.6;Regular Exercise
-Neufundl‰nder;Newfoundland;Sweet, Patient, Devoted;66.04;71.12;45.359237;68.0388555;0.6;Regular Exercise
+Neufundl√§nder;Newfoundland;Sweet, Patient, Devoted;66.04;71.12;45.359237;68.0388555;0.6;Regular Exercise
 Norfolk Terrier;Norfolk Terrier;Fearless, Alert, Fun-Loving;22.86;25.40;4.9895160700000005;5.4431084400000005;0.6;Regular Exercise
 ;Norrbottenspets;Fearless, Agile, Attentive;41.910000000000004;45.72;9.071847400000001;13.6077711;0.8;Energetic
 Norsk Buhund;Norwegian Buhund;Confident, Smart, Perceptive;40.64;46.99;11.793401620000001;18.143694800000002;0.8;Energetic
-Norsk Elghund Gr‰;Norwegian Elkhound;Friendly, Confident, Dependable;49.53;52.07;21.772433760000002;24.947580350000003;0.6;Regular Exercise
+Norsk Elghund Gr√§;Norwegian Elkhound;Friendly, Confident, Dependable;49.53;52.07;21.772433760000002;24.947580350000003;0.6;Regular Exercise
 Norsk Ludehund;Norwegian Lundehund;Loyal, Energetic, Alert;30.48;38.1;9.071847400000001;13.6077711;0.8;Energetic
 Norwich Terrier;Norwich Terrier;Affectionate, Alert, Curious;25.40;25.40;5.4431084400000005;5.4431084400000005;0.8;Energetic
 Nova Scotia Duck Tolling Retriever;Nova Scotia Duck Tolling Retriever;Affectionate, Intelligent, Outgoing;43.18;53.34;15.875732950000002;22.6796185;1.0;Needs Lots of Activity
@@ -188,13 +188,13 @@ Pekingese;Pekingese;Affectionate, Loyal, Regal in Manner;15.24;22.86;6.35029318;
 Pembroke Welsh Corgi;Pembroke Welsh Corgi;Affectionate, Smart, Alert;25.40;30.48;12.70058636;13.6077711;0.8;Energetic
 ;Perro de Presa Canario;Confident, Calm, Strong-Willed;55.88;66.04;38.10175908;49.895160700000005;0.4;Calm
 ;Peruvian Inca Orchid;Affectionate, Loyal, Noble;24.765;65.405;3.855535145;24.947580350000003;0.8;Energetic
-Petit Basset griffon vendeen;Petit Basset Griffon VendÈen;Alert, Happy, Vivacious;33.02;38.1;11.33980925;18.143694800000002;0.8;Energetic
+Petit Basset griffon vendeen;Petit Basset Griffon Vend√©en;Alert, Happy, Vivacious;33.02;38.1;11.33980925;18.143694800000002;0.8;Energetic
 Pharaoh Hound;Pharaoh Hound;Friendly, Smart, Noble;53.34;63.5;20.41165665;24.947580350000003;0.8;Energetic
 ;Plott Hound;Loyal, Alert, Intelligent;50.8;63.5;18.143694800000002;27.2155422;0.8;Energetic
 English Pointer;Pointer;Loyal, Hardworking, Even-Tempered;58.42;71.12;20.41165665;34.01942775;0.8;Energetic
 Polski Owczarek Nizinny;Polish Lowland Sheepdog;Confident, Clever, Lively;43.18;50.8;13.6077711;22.6796185;0.8;Energetic
-Spitz;Pomeranian;Inquisitive, Bold, Lively;15.24;17.78;1.3607771100000001;3.17514659;0.6;Regular Exercise
-Zwergpudel;Poodle (Miniature);Active, Proud, Very Smart;25.40;38.1;4.535923700000001;6.80388555;;
+Spitz / Zwergspitz (Pomeranian);Pomeranian;Inquisitive, Bold, Lively;15.24;17.78;1.3607771100000001;3.17514659;0.6;Regular Exercise
+Zwergpudel / Zwergpudel Apricot / Zwergpudel Braun / Zwergpudel Rot / Zwergpudel Schwarz / Zwergpudel Weiss / Zwergpudel schwarz aus mehrfarben / Zwergpudel falb / Zwergpudel falb aus mehrfarben / Zwergpudel grau / ;Poodle (Miniature);Active, Proud, Very Smart;25.40;38.1;4.535923700000001;6.80388555;;
 Grosspudel / Pudel;Poodle (Standard);Active, Proud, Very Smart;38.1;38.1;18.143694800000002;31.751465900000003;0.6;Regular Exercise
 ;Poodle (Toy);Agile, Intelligent, Self-Confident;25.40;25.40;1.81436948;2.7215542200000002;0.6;Regular Exercise
 Porcelaine;Porcelaine;Independent, Energetic, Powerful;55.88;58.42;24.947580350000003;28.12272694;0.8;Energetic
@@ -215,7 +215,7 @@ Rat Terrier;Rat Terrier;Friendly, Inquisitive, Lovable;25.40;45.72;4.53592370000
 Rhodesian Ridgeback;Rhodesian Ridgeback;Affectionate, Dignified, Even-Tempered;60.96;68.58;31.751465900000003;38.55535145;0.6;Regular Exercise
 Ciobanesc Romanesc Mioritic;Romanian Mioritic Shepherd Dog;Loyal, Independent, Confident Guardian;57.15;73.66;45.359237;58.9670081;0.6;Regular Exercise
 Rottweiler;Rottweiler;Loyal, Loving, Confident Guardian;55.88;68.58;36.287389600000004;61.23496995;0.6;Regular Exercise
-Russel Terrier;Russell Terrier;Alert, Inquisitive, Lively;25.40;30.48;4.082331330000001;6.80388555;1.0;Needs Lots of Activity
+Russell Terrier / Jack Russell Terrier ;Russell Terrier;Alert, Inquisitive, Lively;25.40;30.48;4.082331330000001;6.80388555;1.0;Needs Lots of Activity
 Russkiy Toy;Russian Toy;Loyal, Smart, Charming;20.32;27.94;2.9483504050000002;2.9483504050000002;0.6;Regular Exercise
 ;Russian Tsvetnaya Bolonka;Playful, Charming, Inquisitive;22.86;25.40;2.0411656650000003;4.9895160700000005;0.6;Regular Exercise
 St. Bernhardshund;Saint Bernard;Playful, Charming, Inquisitive;66.04;76.2;54.4310844;81.6466266;0.6;Regular Exercise
@@ -238,18 +238,18 @@ Sloughi;Sloughi;Reserved, Graceful, Noble;60.96;73.66;15.875732950000002;22.6796
 ;Slovakian Wirehaired Pointer;;57.15;67.31;22.6796185;29.48350405;0.8;Energetic
 ;Slovensky Cuvac;Courageous, Alert, Faithful;58.42;69.85;30.84428116;43.99845989;0.4;Calm
 Slovensky Kopov;Slovensky Kopov;Courageous, Alert, Determined;40.64;50.8;14.968548210000002;19.958064280000002;0.6;Regular Exercise
-Kleiner M¸nsterl‰nder;Small Munsterlander Pointer;Intelligent, Devoted, Self-Confident;52.07;53.34;18.143694800000002;27.2155422;1.0;Needs Lots of Activity
+Kleiner M√ºnsterl√§nder;Small Munsterlander Pointer;Intelligent, Devoted, Self-Confident;52.07;53.34;18.143694800000002;27.2155422;1.0;Needs Lots of Activity
 Fox Terrier glatthaar;Smooth Fox Terrier;Friendly, Independent, Amusing;38.1;38.1;6.80388555;8.164662660000001;0.8;Energetic
 Soft Coated Wheaten Terrier;Soft Coated Wheaten Terrier;Friendly, Happy, Deeply Devoted;43.18;48.26;13.6077711;18.143694800000002;0.8;Energetic
 ;Spanish Mastiff;Affectionate, Intelligent, Kind;71.12;88.9;63.502931800000006;90.718474;0.4;Calm
-Perro de Agua EspaÒol;Spanish Water Dog;Playful but also Work-Oriented. Very Active and Upbeat.;40.005;50.165;14.06136347;22.22602613;0.8;Energetic
+Perro de Agua Espa√±ol;Spanish Water Dog;Playful but also Work-Oriented. Very Active and Upbeat.;40.005;50.165;14.06136347;22.22602613;0.8;Energetic
 Spinone Italiano;Spinone Italiano;Sociable, Patient, Docile;55.88;68.58;;;0.8;Energetic
 Stabyhoun;Stabyhoun;Intelligent, Responsive, Loving;48.26;53.34;18.143694800000002;27.2155422;0.8;Energetic
 Staffordshire Bullterrier;Staffordshire Bull Terrier;Clever, Brave, Tenacious;35.56;40.64;10.886216880000001;17.23651006;0.8;Energetic
 Schnauzer;Standard Schnauzer;Fearless, Smart, Spirited;44.45;49.53;13.6077711;22.6796185;0.6;Regular Exercise
 Sussex Spaniel;Sussex Spaniel;Friendly, Merry, Even-Tempered;33.02;38.1;15.875732950000002;20.41165665;0.6;Regular Exercise
 ;Swedish Lapphund;Playful, Intelligent, Lively;40.64;50.8;13.6077711;20.41165665;0.6;Regular Exercise
-V‰stgˆtaspets;Swedish Vallhund;Friendly, Energetic, Watchful;29.21;34.925;9.071847400000001;15.875732950000002;1.0;Needs Lots of Activity
+V√§stg√∂taspets;Swedish Vallhund;Friendly, Energetic, Watchful;29.21;34.925;9.071847400000001;15.875732950000002;1.0;Needs Lots of Activity
 Taiwan Dog;Taiwan Dog;Loyal, Versatile, Intelligent;43.18;50.8;11.793401620000001;18.143694800000002;1.0;Needs Lots of Activity
 ;Teddy Roosevelt Terrier;Playful, Versatile, Intelligent;20.32;38.1;3.62873896;11.33980925;0.8;Energetic
 Thai Ridgeback;Thai Ridgeback;Loyal, Independent, Agile;50.8;60.96;15.875732950000002;34.01942775;0.8;Energetic
