@@ -27,10 +27,7 @@ d3.dsv(";", "data/hunde-wien.csv").then(data => {
 d3.text("data/tab_4.3.2_freizeitundsport_.csv").then(text => {
     const rows = d3.tsvParseRows(text);
     const cols = rows[5][0].split(";");
-    const dogSpace = Number(
-      cols[3].replace(",", ".")
-    );
-
+    const dogSpace = Number(cols[4].replace(",", ".")) + Number(cols[6].replace(",", "."));
     d3.select("#dog-space-count")
       .text(Math.round(dogSpace).toLocaleString());
 

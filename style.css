@@ -57,3 +57,22 @@
     }
 }
 
+.filter-controls-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    max-width: 250px;
+    margin: 0;
+}
+
+.filters {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    gap: 0.25rem;
+    background: #f5f5f5;
+    border-radius: 8px;
+    max-width: 360px;
+}
+

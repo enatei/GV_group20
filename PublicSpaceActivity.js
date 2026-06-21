@@ -1,87 +1,49 @@
-const INCH_TO_CM = 2.54;
-let dogSizeData = null; //dog characteristics
-let livingSpaceMap = null;
+let dogsActivity = null; //dog characteristics
+let publicSpaceMap = null;
 
-const DISTRICT_NAMES = {
-    90100: "Innere Stadt",
-    90200: "Leopoldstadt",
-    90300: "Landstraße",
-    90400: "Wieden",
-    90500: "Margareten",
-    90600: "Mariahilf",
-    90700: "Neubau",
-    90800: "Josefstadt",
-    90900: "Alsergrund",
-    91000: "Favoriten",
-    91100: "Simmering",
-    91200: "Meidling",
-    91300: "Hietzing",
-    91400: "Penzing",
-    91500: "Rudolfsheim-Fünfhaus",
-    91600: "Ottakring",
-    91700: "Hernals",
-    91800: "Währing",
-    91900: "Döbling",
-    92000: "Brigittenau",
-    92100: "Floridsdorf",
-    92200: "Donaustadt",
-    92300: "Liesing"
+const ENERGY_MAP = {
+    "Couch Potatoe": 0,
+    "Calm": 0.25,
+    "Regular Exercise": 0.5,
+    "Energetic": 0.75,
+    "Needs Lots of Activity": 1.0
 };
 
-//load apartment-space data (district number and m2)
-function loadApartmentData() {
-    return d3.text("data/tab-2-2-3-wohnu.csv")
+const ENERGY_LABELS = ["Very Low", "Low", "Medium", "High", "Very High"];
+
+function getEnergyLabel(value) {
+    if (value <= 0.2) return "Very Low";
+    if (value <= 0.4) return "Low";
+    if (value <= 0.6) return "Medium";
+    if (value <= 0.8) return "High";
+    return "Very High";
+}
+
+//load public-space data (district number, hundezone, auslauffläche)
+function loadPublicSpaceData() {
+    return d3.text("data/tab_4.3.2_freizeitundsport_.csv")
         .then(text => {
             const lines = text.split('\n');
             const map = new Map();
             for (let i = 6; i < 29; i++) {
                 const parts = lines[i].split(';');
                 const districtCode = parseInt(parts[1]);
-                const livingSpace = parseFloat(parts[6]);
-                map.set(districtCode, livingSpace);
+                const dogZones = parseFloat(parts[4].replace(',', '.'));
+                const dogArea = parseFloat(parts[6].replace(',', '.'));
+                map.set(districtCode, {
+                    dogZones: dogZones,
+                    dogArea: dogArea,
+                    total: dogZones + dogArea
+                });
             }
             return map;
         });
 }
 
-//load dog characteristics
-function loadDogSizeData() {
-    return d3.dsv(";", "data/akc-data-latest-selected-columns.csv", d3.autoType)
-        .then(data => {
-            const result = data
-                .map(d => ({
-                    nameGerman: d.Deutsch || d.English,
-                    nameEnglish: d.English,
-                    avgHeightCm: ((d.min_height || 0) + (d.max_height || 0)) / 2 * INCH_TO_CM,
-                    energyCategory: d.energy_level_category || "Unknown"
-                }));
-            return result;
-        });
-}
-
-//find dog breeds within dog characteristics
-function findDogBreed(name, data) {
-    const search = name.toLowerCase();
-
-    let match = data.find(d => d.nameGerman.toLowerCase() === search);
-    if (match) return match;
-
-    match = data.find(d => d.nameEnglish.toLowerCase() === search);
-    if (match) return match;
-
-    match = data.find(d => d.nameGerman.toLowerCase().includes(search));
-    if (match) return match;
-
-    match = data.find(d => d.nameEnglish.toLowerCase().includes(search));
-    if (match) return match;
-
-    return null;
-}
-
 //draw chart
-function drawChart(dogsData) {
+function drawActivityChart(data) {
     //groupds dogs per district
-    const dogsByDistrict = d3.group(dogsData, r => +r.DISTRICT_CODE);
+    const dogsByDistrict = d3.group(data, r => +r.DISTRICT_CODE);
     const districtData = [];
 
     //only get pureBred dogs since characteristics only exist for them, per district
@@ -100,35 +62,41 @@ function drawChart(dogsData) {
 
 
         //see if top5 dog match characteristics csv, get details
-        let totalHeight = 0;
+        let totalEnergy = 0;
         let totalCount = 0;
-        details = [];
+        const details = [];
         for (const { breed, count } of top5) {
             const match = findDogBreed(breed, dogSizeData);
             if (match) {
-                totalHeight += match.avgHeightCm * count;
+                const energyValue = ENERGY_MAP[match.energyCategory];
+                totalEnergy += energyValue * count;
                 totalCount += count;
                 details.push({
                     breed,
-                    height: match.avgHeightCm
+                    energy: getEnergyLabel(energyValue)
                 });
             }
         }
 
         //add all the data to districtData (living space, dog data)
-        const livingSpace = livingSpaceMap.get(code);
+        const publicSpace = publicSpaceMap.get(code);
+        const avgEnergyValue = totalEnergy / totalCount;
+        const avgEnergyLabel = getEnergyLabel(avgEnergyValue);
         districtData.push({
             district: code,
             name: DISTRICT_NAMES[code],
-            avgHeight: totalHeight / totalCount,
+            avgEnergyValue: avgEnergyValue,
+            avgEnergyLabel: avgEnergyLabel,
             totalDogs: totalAllDogs,
-            livingSpace: livingSpace,
+            dogZones: publicSpace.dogZones,
+            dogArea: publicSpace.dogArea,
+            areaTotal: publicSpace.total,
             topBreeds: details
         });
     }
 
     //sort: data with less avgHeight gets drawn first
-    districtData.sort((a, b) => a.avgHeight - b.avgHeight);
+    districtData.sort((a, b) => a.avgEnergyValue - b.avgEnergyValue);
 
     //setup chart
     const margin = { top: 40, right: 80, bottom: 60, left: 80 };
@@ -136,7 +104,7 @@ function drawChart(dogsData) {
     const innerW = width - margin.left - margin.right;
     const innerH = height - margin.top - margin.bottom;
 
-    const svg = d3.select("#apartment-chart-svg")
+    const svg = d3.select("#activity-chart-svg")
         .attr("width", width)
         .attr("height", height)
         .style("background", "white")
@@ -147,16 +115,15 @@ function drawChart(dogsData) {
     const g = svg.append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    //x-axis (m2 of apartment-size)
-    const xMin = 55;
-    const xMax = 110;
-    const x = d3.scaleLinear()
-        .domain([xMin, xMax])
+    //x-axis (sqrt for better distribution)
+    const maxArea = d3.max(districtData, d => d.areaTotal);
+    const x = d3.scaleSqrt()
+        .domain([0, maxArea * 1.1])
         .range([0, innerW]);
 
-    //y-axis (cm of average dog size (top 5 dogs))
-    const yMin = 60;
-    const yMax = 115;
+    //y-axis (average activity level of top 5 dogs)
+    const yMin = 0.4;
+    const yMax = 0.9;
     const y = d3.scaleLinear()
         .domain([yMin, yMax])
         .range([innerH, 0]);
@@ -170,7 +137,7 @@ function drawChart(dogsData) {
     g.append("g")
         .attr("class", "grid")
         .call(d3.axisLeft(y)
-            .ticks(8)
+            .ticks(6)
             .tickSize(-innerW)
             .tickFormat("")
         )
@@ -181,7 +148,7 @@ function drawChart(dogsData) {
         .attr("class", "grid")
         .attr("transform", `translate(0,${innerH})`)
         .call(d3.axisBottom(x)
-            .ticks(12)
+            .tickValues([0, 1000, 2500, 5000, 10000, 15000, 20000, 30000, 40000, 50000, 100000, 200000, 400000])
             .tickSize(-innerH)
             .tickFormat("")
         )
@@ -192,16 +159,18 @@ function drawChart(dogsData) {
     g.append("g")
         .attr("transform", `translate(0,${innerH})`)
         .call(d3.axisBottom(x)
-            .ticks(12)
-            .tickFormat(d => d + " m²")
+            .tickValues([0, 1000, 2500, 5000, 10000, 15000, 20000, 30000, 40000, 50000, 100000, 200000, 400000])
+            .tickFormat(d => {
+                return (d / 1000) + "k";
+            })
         )
         .style("font-size", "12px")
         .style("font-weight", "500");
 
     g.append("g")
         .call(d3.axisLeft(y)
-            .ticks(8)
-            .tickFormat(d => d + " cm")
+            .ticks(6)
+            .tickFormat(d => d.toFixed(1))
         )
         .style("font-size", "12px")
         .style("font-weight", "500");
@@ -214,7 +183,7 @@ function drawChart(dogsData) {
         .style("font-size", "15px")
         .style("font-weight", "bold")
         .style("fill", "#333")
-        .text("Average Apartment Space (m²)");
+        .text("Average public Dog Space (in 1000 m²)");
 
     g.append("text")
         .attr("x", -innerH / 2)
@@ -224,7 +193,7 @@ function drawChart(dogsData) {
         .style("font-weight", "bold")
         .style("fill", "#333")
         .attr("transform", "rotate(-90)")
-        .text("Average Dog Height (cm)");
+        .text("Average Dog Activity Level");
 
     //Tooltip, to display data per district (dog details)
     const tooltip = d3.select("body").append("div")
@@ -243,16 +212,8 @@ function drawChart(dogsData) {
     g.selectAll("circle")
         .data(districtData)
         .join("circle")
-        .attr("cx", d => x(d.livingSpace))
-        .attr("cy", d => {
-            if (d.district == 91400) {
-                return y(d.avgHeight + 0.5)
-            } else if (d.district == 90300) {
-                return y(d.avgHeight - 0.5)
-            } else {
-                return y(d.avgHeight)
-            }
-        })
+        .attr("cx", d => x(d.areaTotal))
+        .attr("cy", d => y(d.avgEnergyValue))
         .attr("r", d => r(d.totalDogs))
         .attr("stroke", "white")
         .attr("fill", "#e05c7a")
@@ -268,7 +229,7 @@ function drawChart(dogsData) {
 
             //html-description for top 5 dogs within tooltip, breed + cm
             const breeds = d.topBreeds.slice(0, 5).map(b =>
-                `${b.breed}: ${b.height.toFixed(1)} cm`
+                `${b.breed}: ${b.energy}`
             ).join("<br>");
 
             //tooltip text (will be shown when hovering over bubble)
@@ -277,11 +238,12 @@ function drawChart(dogsData) {
                 .html(`
                     <strong style="font-size: 15px; color: black;">${d.name}</strong><br>
                     <hr style="margin: 4px 0; border-color: rgba(255,255,255,0.4);">
-                    <strong>Avg Dog Height (pure, Top 5):</strong> ${d.avgHeight.toFixed(1)} cm<br>
-                    <strong>Avg Apartment Space:</strong> ${d.livingSpace} m²<br>
+                    <strong>Avg Activity Level (pure, Top 5):</strong> ${d.avgEnergyValue.toFixed(2)}, ${d.avgEnergyLabel}<br>
+                    <strong>Public Dog Zones:</strong> ${d.dogZones.toFixed(1)} m²<br>
+                    <strong>Public Off-Leash Areas:</strong> ${d.dogArea.toFixed(1)} m²<br>
                     <strong>Total Dogs (all):</strong> ${d.totalDogs}<br>
                     <hr style="margin: 4px 0; border-color: rgba(255,255,255,0.4);">
-                    <strong>Top 5 Breeds (pure) & Avg Height:</strong><br>
+                    <strong>Top 5 Breeds (pure) & Avg Activity Level:</strong><br>
                     ${breeds}
                 `);
         })
@@ -309,16 +271,8 @@ function drawChart(dogsData) {
         .data(districtData)
         .join("text")
         .attr("class", "label")
-        .attr("x", d => x(d.livingSpace))
-        .attr("y", d => {
-            if (d.district == 91400) {
-                return y(d.avgHeight + 0.5) + 4
-            } else if (d.district == 90300) {
-                return y(d.avgHeight - 0.5) + 4
-            } else {
-                return y(d.avgHeight) + 4
-            }
-        })
+        .attr("x", d => x(d.areaTotal))
+        .attr("y", d => y(d.avgEnergyValue - 0.004))
         .attr("text-anchor", "middle")
         .style("font-size", "11px")
         .style("fill", "black")
@@ -326,23 +280,23 @@ function drawChart(dogsData) {
         .text(d => getDistrictLabel(d.district));
 }
 
-//load all 3 data
-Promise.all([loadApartmentData(), loadDogSizeData()])
-    .then(([apartmentData, dogSizeDataLoaded]) => {
-        livingSpaceMap = apartmentData;
-        dogSizeData = dogSizeDataLoaded;
-
+//load data
+Promise.all([loadPublicSpaceData()])
+    .then(([loadPublicSpaceData]) => {
+        publicSpaceMap = loadPublicSpaceData;
+        //draw chart, but wait for previous chart to be completed (for re-using data)
         setTimeout(() => {
             if (dogData && dogData != null &&
                 dogSizeData && dogSizeData != null &&
                 publicSpaceMap && publicSpaceMap != null) {
-                drawChart(dogData);
+                drawActivityChart(dogData);
             } else {
                 d3.select("#activity-chart-svg").html("<text>Error: data not loaded</text>");
             }
         }, 500);
     })
+
     .catch(error => {
         console.error("Error loading data:", error);
-        d3.select("#apartment-chart-title").text("Error loading data");
+        d3.select("#activity-chart-title").text("Error loading data");
     });

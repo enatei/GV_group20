@@ -81,9 +81,23 @@
 
     <script src="MapDogsPerDistrict.js"></script>
 
+
+    <H2>Dogs Per Capita</H2>
+    <p>This chart compares each district's population size with its dog-to-resident ratio, highlighting areas with
+        higher or lower dog density.</p>
+
+    <div class="capita">
+        <div id="capita-chart">
+            <svg id="capita-chart-svg"></svg>
+        </div>
+    </div>
+
+    <script src="DogsCapita.js"></script>
+
     <H2>Housing Shapes Dog Ownership</H2>
-    <p>This chart explores how living space relates to dog ownership.
-        Each bubble shows a district's average apartment space and the top 5 (pure breed) size and activity levels. 
+    <p>This segment explores how living space relates to dog ownership.
+        Each bubble shows a district's average apartment space and the top 5 (pure breed) sizes, as well as the average
+        height of the top 5 dogs.
         The bubble size represents the overall number of dogs within the district.</p>
     <p id="hint">Hover over a bubble to examine!</p>
 
@@ -96,10 +110,59 @@
     <script src="DogsPerApartmentSpace.js"></script>
 
     <H2>Public Space For Active Dogs</H2>
+    <p>This section investigates how dog areas in public space relate to dog activity levels (Very Low, Low, Medium,
+        High, Very High).
+        Each bubble shows a district's dog zones, dog off-leash areas, the average dog activity level of the top 5 dogs,
+        and the top 5 (pure breed) dog activity levels.
+        The bubble size represents the overall number of dogs within the district.</p>
+    <p id="hint">Hover over a bubble to discover!</p>
 
-    <H2>Dogs Per Capita</H2>
+    <div class="activity">
+        <div id="activity-chart">
+            <svg id="activity-chart-svg"></svg>
+        </div>
+    </div>
+
+    <script src="PublicSpaceActivity.js"></script>
 
     <H2>Socioeconomic Differences In Breed Preferences</H2>
+    <p>The last part takes a closer look at socioeconomic differences in dog ownership.
+        Each bubble represents a district, showing the relationship between social parameters (monthly net income,
+        education level, age) and the ratio of purebred vs. mixed-breed dogs.</p>
+    <p id="hint">Select parameters to switch views!</p>
+
+    <div class="filters">
+        <div class="filter-controls-vertical">
+            <b>Social Parameters</b>
+            <label>
+                <input type="radio" name="socio-param" value="income" checked> Monthly net income
+            </label>
+            <label>
+                <input type="radio" name="socio-param" value="education"> Education level
+            </label>
+            <label>
+                <input type="radio" name="socio-param" value="age"> Age
+            </label>
+        </div>
+
+        <div class="filter-controls-vertical">
+            <b>Dog Breeds</b>
+            <label>
+                <input type="radio" name="breed" value="all" checked> All breeds
+            </label>
+            <label>
+                <input type="radio" name="breed" value="pure"> Pure breeds only
+            </label>
+        </div>
+    </div>
+
+    <div class="socioeconomic">
+        <div id="socioeconomic-chart">
+            <svg id="socioeconomic-chart-svg"></svg>
+        </div>
+    </div>
+
+    <script src="SocioeconomicDifferences.js"></script>
 
 </body>
 
