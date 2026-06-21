@@ -206,6 +206,7 @@ function drawSocioChart(dogsData) {
         .ticks(10)
         .tickFormat(d3.format(".0f"));
 
+    //if education -> only show full values
     if (currentSocialParam === 'education') {
         xAxis.tickValues([3.0, 4.0, 5.0]);
     }
