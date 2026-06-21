@@ -83,8 +83,10 @@
 
 
     <H2>Dogs Per Capita</H2>
-    <p>This chart compares each district's population size with its dog-to-resident ratio, highlighting areas with
-        higher or lower dog density.</p>
+    <p>This chart shows each district's dog density, with the relative number of dogs per 1,000 inhabitants on the y-axis and district's total population on the x-axis. 
+        Each bubble represents a district.
+        By using the relative number of dogs per 1,000 inhabitants, districts of all sizes are comparable and reveal which areas have the highest dog-to-resident ratio.
+    </p>
 
     <div class="capita">
         <div id="capita-chart">
@@ -127,18 +129,19 @@
 
     <H2>Socioeconomic Differences In Breed Preferences</H2>
     <p>The last part takes a closer look at socioeconomic differences in dog ownership.
-        Each bubble represents a district, showing the relationship between social parameters (monthly net income,
-        education level, age) and the ratio of purebred vs. mixed-breed dogs.</p>
+        Each bubble represents a district, showing the relationship between social parameters (average monthly net income,
+        average education level, average age) and the ratio of purebred vs. mixed-breed dogs. 
+        Education levels are represented on a scale from 1 to 6, where 1 indicates 'Pflichtschulabschluss' and 6 indicates 'Akademiker*in'.</p>
     <p id="hint">Select parameters to switch views!</p>
 
     <div class="filters">
         <div class="filter-controls-vertical">
             <b>Social Parameters</b>
             <label>
-                <input type="radio" name="socio-param" value="income" checked> Monthly net income
+                <input type="radio" name="socio-param" value="income" checked> Monthly Net Income
             </label>
             <label>
-                <input type="radio" name="socio-param" value="education"> Education level
+                <input type="radio" name="socio-param" value="education"> Education Level
             </label>
             <label>
                 <input type="radio" name="socio-param" value="age"> Age
@@ -148,10 +151,10 @@
         <div class="filter-controls-vertical">
             <b>Dog Breeds</b>
             <label>
-                <input type="radio" name="breed" value="all" checked> All breeds
+                <input type="radio" name="breed" value="pure" checked> Pure
             </label>
             <label>
-                <input type="radio" name="breed" value="pure"> Pure breeds only
+                <input type="radio" name="breed" value="mixed"> Mixed
             </label>
         </div>
     </div>

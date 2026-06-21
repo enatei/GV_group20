@@ -2,32 +2,6 @@ const INCH_TO_CM = 2.54;
 let dogSizeData = null; //dog characteristics
 let livingSpaceMap = null;
 
-const DISTRICT_NAMES = {
-    90100: "Innere Stadt",
-    90200: "Leopoldstadt",
-    90300: "Landstraße",
-    90400: "Wieden",
-    90500: "Margareten",
-    90600: "Mariahilf",
-    90700: "Neubau",
-    90800: "Josefstadt",
-    90900: "Alsergrund",
-    91000: "Favoriten",
-    91100: "Simmering",
-    91200: "Meidling",
-    91300: "Hietzing",
-    91400: "Penzing",
-    91500: "Rudolfsheim-Fünfhaus",
-    91600: "Ottakring",
-    91700: "Hernals",
-    91800: "Währing",
-    91900: "Döbling",
-    92000: "Brigittenau",
-    92100: "Floridsdorf",
-    92200: "Donaustadt",
-    92300: "Liesing"
-};
-
 //load apartment-space data (district number and m2)
 function loadApartmentData() {
     return d3.text("data/tab-2-2-3-wohnu.csv")
@@ -132,7 +106,8 @@ function drawChart(dogsData) {
 
     //setup chart
     const margin = { top: 40, right: 80, bottom: 60, left: 80 };
-    const width = 900, height = 650;
+    const width = 900;
+    const height = 650;
     const innerW = width - margin.left - margin.right;
     const innerH = height - margin.top - margin.bottom;
 
@@ -326,7 +301,7 @@ function drawChart(dogsData) {
         .text(d => getDistrictLabel(d.district));
 }
 
-//load all 3 data
+//load all data
 Promise.all([loadApartmentData(), loadDogSizeData()])
     .then(([apartmentData, dogSizeDataLoaded]) => {
         livingSpaceMap = apartmentData;
